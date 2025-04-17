@@ -1,0 +1,12 @@
+modules = ["go-1.21", "python-3.12", "nodejs-20", "cpp-clang14", "bash", "dotnet-8.0", "elixir-1_17", "gcloud", "haskell-ghc9.6", "hermit-0.38.2", "java-graalvm22.3", "nix", "nodejs-23", "php-8.3", "python-3.9", "qbasic", "r-4.4", "replit-rtld-loader", "rust-nightly", "swift-5.8", "pyright-extended", "ruff", "zig-0.11", "docker", "bun-1.2", "dart-3.5", "go-1.23", "postgresql-17", "svelte-kit-node-20"]
+run = "start"
+compile = "make"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "start"]
+build = ["sh", "-c", "make"]
+deploymentTarget = "gce"
+ignorePorts = true
