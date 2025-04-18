@@ -20,4 +20,8 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = 'nix-shell -p protobuf3_20 --run "BUILD_GRPC_FOR_BACKEND_LLAMA=true GRPC_BACKENDS=\"backend-assets/grpc/llama-cpp-avx2\" GO_TAGS=p2p make build-minimal && ./local-ai --models-path=./models/ --debug=true --address 0.0.0.0:8080"'
+args = "make build"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./local-ai --models-path=./models/ --debug=true --address 0.0.0.0:8080"
